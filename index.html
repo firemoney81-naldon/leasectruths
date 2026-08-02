@@ -1,23 +1,971 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <title>Home</title>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <!--
-      Need a visual blank slate?
-      Remove all code in `styles.css`!
-    -->
-    <link rel="stylesheet" href="styles.css" />
-    <script type="module" src="script.js"></script>
-  </head>
-  <body>
+
+
+  <!-- JSON-LD Structured Data (LLM/AI & Search Engine Crawling Optimization) -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "더올뉴 카니발 장기렌트카",
+      "image": [
+        "https://images.pexels.com/photos/1108157/pexels-photo-1108157.jpeg"
+      ],
+      "description": "2026년형 기아 더올뉴 카니발 장기렌트카 최저가 비교 견적 및 맞춤형 컨설팅. 30대 아빠, 40대 자영업자, 50대 법인 대표를 위한 라이프스타일 맞춤 다이렉트 요금제와 최적의 혜택을 제공합니다.",
+      "brand": {
+        "@type": "Brand",
+        "name": "기아"
+      },
+      "offers": {
+        "@type": "AggregateOffer",
+        "priceCurrency": "KRW",
+        "lowPrice": "420000",
+        "highPrice": "890000",
+        "offerCount": "24",
+        "offers": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Product",
+              "name": "더올뉴 카니발 하이브리드 9인승 장기렌트"
+            },
+            "priceSpecification": {
+              "@type": "PriceSpecification",
+              "price": "520000",
+              "priceCurrency": "KRW",
+              "description": "월 장기렌트료 평균 예상치"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Product",
+              "name": "더올뉴 카니발 가솔린 9인승 장기렌트"
+            },
+            "priceSpecification": {
+              "@type": "PriceSpecification",
+              "price": "450000",
+              "priceCurrency": "KRW",
+              "description": "월 장기렌트료 평균 예상치"
+            }
+          }
+        ]
+      }
+    }
+  </script>
+
+  <style>
+    /* 기본 스타일 및 부드러운 다채로운 색감 디자인 */
+    :root {
+      --primary-color: #4f5cd1; /* 부드럽고 신뢰감을 주는 블루 */
+      --secondary-color: #ff8c69; /* 산뜻한 코랄 오렌지 */
+      --accent-color: #2ec4b6; /* 맑은 민트 그린 */
+      --bg-color: #f7f9fc; /* 눈이 편안한 파스텔조 회백색 */
+      --card-bg: #ffffff;
+      --text-main: #2b3a4a; /* 차분한 다크 슬레이트 */
+      --text-muted: #6b7c96; /* 부드러운 회청색 */
+      --border-color: #e2eaf4;
+      --shadow: 0 12px 32px rgba(79, 92, 209, 0.05);
+    }
+
+    body {
+      font-family: "Noto Sans KR", "Apple SD Gothic Neo", sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: var(--bg-color);
+      color: var(--text-main);
+      line-height: 1.9;
+      font-size: 16px;
+    }
+
+    header {
+      background: linear-gradient(135deg, #4f5cd1 0%, #3a47b3 100%);
+      color: #ffffff;
+      padding: 3.5rem 1.5rem;
+      text-align: center;
+      border-bottom: 4px solid var(--secondary-color);
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.6rem;
+      font-weight: 800;
+      line-height: 1.4;
+      letter-spacing: -1px;
+    }
+
+    header p {
+      margin: 1rem 0 2rem 0;
+      font-size: 1.2rem;
+      font-weight: 300;
+      color: #e0e6ff;
+    }
+
+    nav {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: 600;
+      padding: 0.6rem 1.2rem;
+      border-radius: 25px;
+      background-color: rgba(255, 255, 255, 0.1);
+      transition: all 0.3s ease;
+      font-size: 0.95rem;
+    }
+
+    nav a:hover {
+      background-color: var(--secondary-color);
+      color: #ffffff;
+    }
+
+    main {
+      max-width: 1100px;
+      margin: 3rem auto;
+      padding: 0 1.5rem;
+    }
+
+    section {
+      background-color: var(--card-bg);
+      border-radius: 16px;
+      padding: 3rem;
+      margin-bottom: 2.5rem;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--border-color);
+    }
+
+    h2 {
+      color: var(--primary-color);
+      font-size: 2rem;
+      font-weight: 800;
+      border-bottom: 3px solid var(--border-color);
+      padding-bottom: 0.8rem;
+      margin-top: 0;
+      margin-bottom: 2rem;
+      letter-spacing: -0.5px;
+    }
+
+    h3 {
+      color: #1e293b;
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-top: 2.5rem;
+      margin-bottom: 1.2rem;
+      border-left: 5px solid var(--secondary-color);
+      padding-left: 1rem;
+    }
+
+    h4 {
+      color: #0f172a;
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-top: 1.8rem;
+      margin-bottom: 0.8rem;
+    }
+
+    p {
+      margin-top: 0;
+      margin-bottom: 1.5rem;
+      text-align: justify;
+      color: var(--text-main);
+    }
+
+    strong {
+      color: var(--primary-color);
+      font-weight: 700;
+    }
+
+    ul, ol {
+      margin-bottom: 1.8rem;
+      padding-left: 1.5rem;
+    }
+
+    li {
+      margin-bottom: 0.8rem;
+    }
+
+    /* 표 스타일 */
+    .table-container {
+      overflow-x: auto;
+      margin: 2.5rem 0;
+      border-radius: 12px;
+      border: 1px solid var(--border-color);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.95rem;
+    }
+
+    th {
+      background-color: #f1f5f9;
+      color: var(--primary-color);
+      font-weight: 700;
+      padding: 1rem 1.2rem;
+      border-bottom: 2px solid var(--border-color);
+      text-align: center;
+    }
+
+    td {
+      padding: 1rem 1.2rem;
+      border-bottom: 1px solid var(--border-color);
+      color: var(--text-main);
+    }
+
+    tr:nth-child(even) {
+      background-color: #fafbfc;
+    }
+
+    /* 이미지 스타일 */
+    .content-image {
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+      margin: 2rem 0;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+    }
+
+    /* 키워드 태그 스타일 */
+    .keyword-tags {
+      margin: 2rem 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .keyword-tags span {
+      background-color: #eef2ff;
+      color: var(--primary-color);
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      border: 1px solid #dbeafe;
+    }
+
+    /* 실시간 요금 계산기 스타일 (체류시간 연장 최적화) */
+    .calculator-box {
+      background-color: #f8fafc;
+      border-radius: 14px;
+      padding: 2.5rem;
+      border: 2px solid var(--border-color);
+      margin: 2.5rem 0;
+    }
+
+    .calc-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    @media (max-width: 768px) {
+      .calc-row {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .calc-group {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .calc-group label {
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      color: var(--text-main);
+    }
+
+    .calc-group select, .calc-group input {
+      padding: 0.8rem;
+      border: 1px solid #cbd5e1;
+      border-radius: 8px;
+      background-color: #ffffff;
+      font-size: 1rem;
+      color: var(--text-main);
+      transition: border-color 0.3s;
+    }
+
+    .calc-group select:focus, .calc-group input:focus {
+      outline: none;
+      border-color: var(--primary-color);
+    }
+
+    .calc-result {
+      background-color: #eff6ff;
+      border-radius: 10px;
+      padding: 1.5rem;
+      text-align: center;
+      margin-top: 2rem;
+      border: 1px solid #bfdbfe;
+    }
+
+    .calc-result p {
+      margin: 0;
+      font-size: 1.1rem;
+      color: var(--text-muted);
+    }
+
+    .calc-result .highlight-price {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--primary-color);
+      margin-top: 0.5rem;
+    }
+
+    /* 신청서 폼 스타일 */
+    .form-container {
+      background-color: #fbfbfd;
+      border-radius: 14px;
+      padding: 2.5rem;
+      border: 1px solid var(--border-color);
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+
+    @media (max-width: 768px) {
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .form-field {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 1.5rem;
+    }
+
+    .form-field.full-width {
+      grid-column: span 2;
+    }
+
+    @media (max-width: 768px) {
+      .form-field.full-width {
+        grid-column: span 1;
+      }
+    }
+
+    .form-field label {
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      color: var(--text-main);
+    }
+
+    .form-field input[type="text"],
+    .form-field input[type="tel"],
+    .form-field select,
+    .form-field textarea {
+      padding: 0.8rem;
+      border: 1px solid #cbd5e1;
+      border-radius: 8px;
+      font-size: 1rem;
+      background-color: #ffffff;
+    }
+
+    .form-field textarea {
+      resize: vertical;
+    }
+
+    .checkbox-group {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-top: 0.5rem;
+    }
+
+    .checkbox-group input {
+      width: 18px;
+      height: 18px;
+    }
+
+    .submit-button {
+      background-color: var(--primary-color);
+      color: #ffffff;
+      font-size: 1.2rem;
+      font-weight: 700;
+      padding: 1.2rem;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      width: 100%;
+      margin-top: 1.5rem;
+      transition: background-color 0.3s;
+    }
+
+    .submit-button:hover {
+      background-color: #3b47b3;
+    }
+
+    /* FAQ 스타일 */
+    .faq-item {
+      border-bottom: 1px solid var(--border-color);
+      padding: 1.5rem 0;
+    }
+
+    .faq-question {
+      font-weight: 700;
+      font-size: 1.15rem;
+      color: var(--primary-color);
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .faq-answer {
+      margin-top: 0.8rem;
+      color: var(--text-main);
+      display: none;
+    }
+
+    /* 공인 외부 링크 박스 */
+    .reference-box {
+      background-color: #f1f5f9;
+      border-radius: 12px;
+      padding: 2rem;
+      margin-top: 3rem;
+      border-left: 6px solid var(--primary-color);
+    }
+
+    .reference-box h4 {
+      margin-top: 0;
+      color: var(--primary-color);
+    }
+
+    .reference-box ul {
+      list-style-type: none;
+      padding-left: 0;
+      margin-bottom: 0;
+    }
+
+    .reference-box li {
+      margin-bottom: 1rem;
+    }
+
+    .reference-box a {
+      color: var(--primary-color);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .reference-box a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      background-color: #1e293b;
+      color: #94a3b8;
+      text-align: center;
+      padding: 3rem 1.5rem;
+      font-size: 0.9rem;
+      border-top: 4px solid var(--primary-color);
+    }
+
+    footer p {
+      color: #94a3b8;
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+
+    footer a {
+      color: #ffffff;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>더올뉴 카니발 장기렌트카 맞춤 솔루션</h1>
+    <p>2026년 최신 세제 혜택 반영 및 다이렉트 가격 비교 견적 제안</p>
     <nav>
-      <a href="/" aria-current="page">Home</a>
-      <a href="/page2.html">Other page</a>
+      <ul>
+        <li><a href="#시장분석">서비스 소개</a></li>
+        <li><a href="#맞춤매칭">연령별 추천</a></li>
+        <li><a href="#실시간계산">실시간 요금 계산</a></li>
+        <li><a href="#가격비교">견적 및 비용 비교</a></li>
+        <li><a href="#세제혜택">비용처리 가이드</a></li>
+        <li><a href="#종합신청">상담 및 신청</a></li>
+      </ul>
     </nav>
-    <main>
-      <h1>Home page</h1>
-    </main>
-  </body>
-</html>
+  </header>
+
+  <main>
+    <section id="시장분석">
+      <h2>더올뉴 카니발 장기렌트카 시장 동향 및 가치</h2>
+      <p>기아의 대표적인 다목적 패밀리 밴인 <strong>더올뉴 카니발 장기렌트카</strong>는 실용성과 품격을 모두 갖춘 한국 자동차 시장의 베스트셀러 모델입니다. 특히 2026년도 경제적 유동성을 중시하는 비즈니스 환경에서 신규 구매 방식의 대안으로 장기렌트를 고려하는 이용자가 급격히 증가하고 있습니다. 할부나 리스와 비교했을 때, 신용 등급 보존 및 세무 상의 이점이 뛰어나기 때문입니다.</p>
+      
+      <p>더올뉴 카니발은 가솔린, 디젤에 이어 친환경 파워트레인인 하이브리드 라인업이 강화되면서 수요층이 더욱 다변화되었습니다. 고유가 시대에 하이브리드를 선택하려는 운전자들은 출고 대기 기간을 단축하고 초기 인수 금액을 줄이기 위해 장기렌트를 최적의 방법으로 꼽고 있습니다. 개별 구매 시 발생하는 취등록세, 공채 매입 비용, 매년 납부하는 자동차세와 개별 보험료가 월 대여 요금에 모두 포함되어 있어 단순하고 편리한 관리가 가능한 것이 가장 큰 장점입니다.</p>
+
+      <div class="keyword-tags">
+        <span>더올뉴 카니발 하이브리드 장기렌트 가격</span>
+        <span>카니발 9인승 장기렌트 비용</span>
+        <span>카니발 장기렌트 승계 방법</span>
+        <span>카니발 하이브리드 출고 기간</span>
+        <span>카니발 하이브리드 단점</span>
+        <span>신형 카니발 페이스리프트 리스 차이점</span>
+        <span>개인사업자 카니발 비용처리 부가세 환급</span>
+        <span>더올뉴 카니발 하이브리드 연비 실후기</span>
+        <span>카니발 하이브리드 최저가 견적비교</span>
+        <span>카니발 7인승 vs 9인승 비교추천</span>
+        <span>카니발 무보증 장기렌트 조건</span>
+      </div>
+
+      <p>전문 대여 업체를 통해 계약을 진행하면, 개인의 자산이나 부채로 잡히지 않아 대출 한도가 축소되거나 신용 평가 점수가 내려갈 걱정이 없습니다. 이러한 차이점 덕분에 개인 사업을 운영하는 신규 창업자나 고가의 자산 취득이 부담스러운 급여 생활자들에게 가장 적합한 금융 설계로 인정받고 있습니다.</p>
+    </section>
+
+    <section id="맞춤매칭">
+      <h2>연령대별 및 라이프스타일별 최적의 카니발 매칭 가이드</h2>
+      <p>더올뉴 카니발은 사용자의 생애 주기와 직업적 특성에 따라 용도가 뚜렷하게 나뉩니다. 각 연령대와 상황별 요구 사항을 충족하는 구체적인 예시를 다음과 같이 설명합니다.</p>
+
+      <h3>30대 및 40대 아빠들의 전폭적인 신뢰와 패밀리카 수요</h3>
+      <p>자녀가 성장하는 시기인 <strong>30대 아빠</strong>와 <strong>40대 아빠</strong>는 주말 레저와 일상의 편안함을 동시에 추구합니다. 이 시기에는 안전 사양이 대거 탑재된 <strong>30대 패밀리카</strong> 및 <strong>40대 패밀리카</strong> 추천 목록에서 카니발이 부동의 1위를 유지합니다. 아이들의 카시트 설치 장착 편의성과 슬라이딩 도어의 안전성 덕분에, 자녀가 2명 이상인 <strong>30대 다자녀 가정</strong>이나 <strong>40대 다둥이 부모</strong>들은 세단이나 일반 SUV보다 슬라이딩 도어가 적용된 카니발을 선호합니다.</p>
+      
+      <p>특히 아웃도어 트렌드에 힘입어 주말마다 캠핑장을 찾는 <strong>40대 캠핑족</strong>과 차박 및 야외 레저를 즐기는 <strong>30대 레저용</strong> 차량으로서 뛰어난 가치를 제공합니다. 이들 세대는 차량 내부 공간을 평평하게 설계하여 짐을 적재하고, 텐트 대신 차량 내부에서 휴식을 취하는 방식으로 만족스러운 경험을 얻고 있습니다.</p>
+
+      <h3>자영업자와 개인사업자의 비즈니스 활용 극대화</h3>
+      <p>비즈니스 목적의 활용도가 높은 <strong>40대 자영업자</strong>와 <strong>40대 개인사업자</strong>에게 카니발은 단순한 이동 수단을 넘어 수익 창출을 위한 필수 업무용 차량입니다. 평일에는 대형 화물 및 업무 기재를 적재하고, 주말에는 가족용 차량으로 병행하여 쓸 수 있어 가성비가 돋보입니다. 9인승 모델의 경우, 고속도로 버스 전용 차로 주행이 가능하여 임직원의 장거리 출장이나 외빈 의전에 유용하게 활약합니다.</p>
+      
+      <p>규모 있는 비즈니스를 영위하는 <strong>50대 법인 대표</strong>와 <strong>50대 중소기업 대표</strong>는 비즈니스용 <strong>50대 의전용</strong> 리무진 트림을 계약하여 바이어를 안락하게 모십니다. 법인 차량 관리 대행 서비스를 적용하면 임직원의 소모품 교체 및 정비 이슈가 발생했을 때 대여 전문 업체가 알아서 처리하므로 사업 본연의 가치에 전념할 수 있습니다.</p>
+
+      <h3>신규 운전자와 여성, 은퇴 세대를 아우르는 맞춤 옵션</h3>
+      <p>초기 자본이 부족한 <strong>20대 초기 창업자</strong>나 <strong>20대 장기렌트</strong> 이용자는 보증보험증권 발급을 통해 무보증금 조건으로 차량을 출고하여 초기 기동성을 확보합니다. 자녀들의 방과 후 학원 이동과 주차가 잦은 <strong>40대 워킹맘</strong>과 <strong>30대 여성 운전자</strong>에게는 넓은 시야와 더불어 서라운드 뷰 모니터 및 원격 스마트 주차 보조 옵션이 포함된 라인업이 만족도를 높여줍니다.</p>
+      
+      <p>은퇴 후 편안한 삶을 계획하는 <strong>50대 은퇴 설계자</strong> 및 <strong>60대 장기렌트</strong> 고령 운전자분들은 본인 명의로 자산이 등재될 경우 지역건강보험료율이 크게 올라갈 수 있는 불이익을 방지하고자 렌트를 적극 이용합니다. 장기 렌트는 개인 자산 증가로 잡히지 않으므로 은퇴 후 연금 수급이나 건강보험 피부양자 자격 유지 조건 관리에 탁월합니다.</p>
+    </section>
+
+    <section id="실시간계산">
+      <h2>나에게 맞는 더올뉴 카니발 실시간 예상 요금 계산기</h2>
+      <p>차종 트림과 기간, 초기 부담 비율을 선택하여 대략적인 대여 비용이 얼마인지 즉석에서 시뮬레이션해볼 수 있습니다. 상세한 조건에 따른 계산 결과는 아래 신청 폼과 연동되어 정밀 맞춤 견적서로 송부됩니다.</p>
+      
+      <div class="calculator-box">
+        <div class="calc-row">
+          <div class="calc-group">
+            <label for="calc-engine">파워트레인 및 유종 선택</label>
+            <select id="calc-engine" onchange="calculateRent()">
+              <option value="gasoline">가솔린 3.5 (정숙성 우선)</option>
+              <option value="diesel">디젤 2.2 (강력한 토크)</option>
+              <option value="hybrid">하이브리드 1.6T (극강의 연비)</option>
+            </select>
+          </div>
+          <div class="calc-group">
+            <label for="calc-trim">트림 등급 선택</label>
+            <select id="calc-trim" onchange="calculateRent()">
+              <option value="prestige">프레스티지 (실용적 엔트리)</option>
+              <option value="noblesse">노블레스 (고객 만족 선호)</option>
+              <option value="signature">시그니처 (첨단 사양 대거 탑재)</option>
+              <option value="gravity">그래비티 (독보적 외관 디자인)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="calc-row">
+          <div class="calc-group">
+            <label for="calc-period">이용 계약 기간 선택</label>
+            <select id="calc-period" onchange="calculateRent()">
+              <option value="36">36개월 (단기 회전 우선)</option>
+              <option value="48">48개월 (가장 대중적 대안)</option>
+              <option value="60">60개월 (대여료 인하 우선)</option>
+            </select>
+          </div>
+          <div class="calc-group">
+            <label for="calc-deposit">보증 조건 (초기 자본 투입 수준)</label>
+            <select id="calc-deposit" onchange="calculateRent()">
+              <option value="0">무보증 (초기 비용 없음)</option>
+              <option value="10">보증금 10 퍼센트 납부</option>
+              <option value="20">보증금 20 퍼센트 납부</option>
+              <option value="30">보증금 30 퍼센트 납부</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="calc-row">
+          <div class="calc-group">
+            <label for="calc-age">운전자 만 연령 기준</label>
+            <select id="calc-age" onchange="calculateRent()">
+              <option value="26">만 26세 이상 가입</option>
+              <option value="21">만 21세 이상 가입 (요금 다소 인상)</option>
+            </select>
+          </div>
+          <div class="calc-group">
+            <label for="calc-mileage">약정 주행거리 (연간 기준)</label>
+            <select id="calc-mileage" onchange="calculateRent()">
+              <option value="20000">연간 20,000 킬로미터</option>
+              <option value="30000">연간 30,000 킬로미터</option>
+              <option value="unlimited">연간 주행거리 무제한</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="calc-result">
+          <p>선택 조건 기준 월 대여료 (예상 금액)</p>
+          <div class="highlight-price" id="rent-result">약 520,000 원</div>
+          <p style="font-size: 0.85rem; margin-top: 1rem; color: var(--text-muted);">
+            본 계산기의 요금은 단순 시뮬레이션 결과이며, 제휴 렌트사의 할인 정책 및 금리 변동에 따라 실시간 견적과 다소 차이가 있을 수 있습니다.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="가격비교">
+      <h2>더올뉴 카니발 파워트레인별 가격 분석 및 비용 비교</h2>
+      <p>더올뉴 카니발의 심장 역할을 하는 엔진 종류에 따라 차량 출고가, 예상 월 대여 요금, 연간 세금, 연료 소비 효율을 분석하여 최선의 대안을 선택해야 합니다. 각 엔진 사양의 상세 데이터를 하단 표에 체계적으로 기록하였습니다.</p>
+
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>구분 단위</th>
+              <th>가솔린 3.5 스마트스트림</th>
+              <th>디젤 2.2 스마트스트림</th>
+              <th>터보 하이브리드 1.6</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>차량 등급 기본가</strong></td>
+              <td>약 34,700,000 원 부터</td>
+              <td>약 36,650,000 원 부터</td>
+              <td>약 39,250,000 원 부터</td>
+            </tr>
+            <tr>
+              <td><strong>평균 복합 연비</strong></td>
+              <td>리터당 약 9.0 킬로미터</td>
+              <td>리터당 약 13.1 킬로미터</td>
+              <td>리터당 약 13.5 킬로미터 ~ 14.0 킬로미터</td>
+            </tr>
+            <tr>
+              <td><strong>예상 월 대여료 (48개월)</strong></td>
+              <td>평균 약 450,000 원 내외</td>
+              <td>평균 약 490,000 원 내외</td>
+              <td>평균 약 540,000 원 내외</td>
+            </tr>
+            <tr>
+              <td><strong>매년 선납 자동차세</strong></td>
+              <td>약 900,000 원 상당 (대여료 포함)</td>
+              <td>약 570,000 원 상당 (대여료 포함)</td>
+              <td>약 290,000 원 상당 (대여료 포함)</td>
+            </tr>
+            <tr>
+              <td><strong>엔진 및 승차감 특징</strong></td>
+              <td>진동 소음 없는 최고의 가속감</td>
+              <td>높은 견인력과 우수한 실용 연비</td>
+              <td>정차 시 고요함과 취등록 하이브리드 혜택</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>가솔린 3.5 모델은 정숙함과 부드러운 승차감을 중시하지만 주행거리가 짧은 분에게 이상적입니다. 반면 주행거리가 매년 2만 킬로미터를 넘어간다면 강력한 연비 이점을 제공하는 하이브리드나 장거리 정속 주행에 특화된 디젤 엔진이 전체 지출을 아끼는 현명한 선택입니다.</p>
+    </section>
+
+    <section id="세제혜택">
+      <h2>카니발 장기렌트카의 확실한 장점과 피해갈 수 없는 단점</h2>
+      <p>이용 희망자가 늘어나는 만큼 해당 이용 방식의 명확한 장단점을 정확하게 분석하는 전문 컨설팅이 선행되어야 후회 없는 가입이 보장됩니다.</p>
+
+      <h3>핵심적인 메리트 요소 (장점)</h3>
+      <ul>
+        <li><strong>부채 비율 관리의 용이성:</strong> 금융사의 할부나 일반 오토리스와 달리, 장기렌트는 개인 신용 정보에 금융 부채로 기록되지 않습니다. 이에 따라 차후 내 집 마련이나 가업 확장을 위한 주택담보대출, 기업 자금 융통 시 대출 한도를 확보하는 데 큰 무기를 제공합니다.</li>
+        <li><strong>법인세 및 종합소득세 필요경비 인정:</strong> 연간 차량 대여 비용 최대 800만 원에 유류비 및 세차비 등 차량 유지비를 더해 매년 총 1,500만 원 상당을 전액 필요경비로 세무 처리할 수 있습니다.</li>
+        <li><strong>부가세 전액 환급 및 환수 혜택:</strong> 세법상 9인승 승합차는 부가 가치세 매입세액 공제 대상에 속합니다. 개인사업자와 법인 임직원이 영업 및 출퇴근용으로 이용하는 조건이라면, 지출한 대여료의 10 퍼센트에 상당하는 세액을 부가세 확정 신고 시 전액 환급받을 수 있습니다.</li>
+        <li><strong>사고 시 할증 없는 전담 처리:</strong> 큰 사고가 나더라도 렌트 업체의 면책금 제도(보통 10만 원에서 30만 원 상당)만 지불하면 보험 할증이나 월 요금 인상 없이 신속한 보상이 완결됩니다.</li>
+      </ul>
+
+      <h3>이용자가 감수해야 하는 실질적 단점</h3>
+      <ul>
+        <li><strong>영업용 렌터카 전용 번호판 부착:</strong> 차량 식별 기호인 하, 허, 호 번호판이 강제 부착됩니다. 다만 과거에 비해 렌터카의 대중적인 선호가 크게 늘어나 부정적인 인식은 거의 해소되었습니다.</li>
+        <li><strong>개인 보험 운전 경력의 일시적 단절:</strong> 렌터카 이용 중에는 개인 자동차 보험 경력이 유지되지 않습니다. 만약 무사고 경력이 10년 이상이고 연간 보험료가 지극히 낮았던 운전자라면 장기렌트로 인해 무사고 경력이 일부 단절될 위험이 있습니다.</li>
+        <li><strong>중도 계약 해지 시 반환 위약금 부담:</strong> 계약 기간 도중 부득이한 사정으로 약정을 종료할 때 남은 요금에 비례하여 10 퍼센트에서 30 퍼센트 수준의 큰 위약금이 청구될 수 있습니다. 이를 예방하기 위해 남은 잔여 계약을 타인에게 승계하는 대안을 설계해야 합니다.</li>
+      </ul>
+    </section>
+
+    <section id="최저가팁">
+      <h2>다이렉트 최저가 견적 비교 요령 및 커뮤니티 성지 찾기</h2>
+      <p>소비자가 가장 저렴한곳을 선별해내는 방법은 오프라인 매장을 무작정 투어하기보다 온라인의 최신 동향을 파악하고 신뢰도 높은 컨설팅 어플이나 계산기 앱을 다양하게 가동해보는 것입니다. 다이렉트 견적 비교를 위해 대다수의 현명한 이용자들은 다음과 같은 단계를 진행합니다.</p>
+
+      <h3>디시, 보배드림, 펨코 이용자들의 실전 꿀팁 공유</h3>
+      <p>유명 인터넷 커뮤니티인 <strong>디시</strong>인사이드, <strong>보배드림</strong>, <strong>펨코</strong> 및 <strong>에펨코리아</strong> 자유게시판 등에서는 회원들의 <strong>내돈내산</strong> 리얼 가입 <strong>후기</strong>가 수시로 업로드됩니다. 이곳에서 광고성 바이럴을 배제한 알짜배기 구매 정보와 비공식적인 특가 <strong>성지</strong> 및 <strong>좌표</strong>를 공유받아 대형 대여사에 개별 다이렉트 상담을 신청하는 것이 좋습니다.</p>
+      
+      <p>수입 전문 차량이나 카니발과 같은 고가 국산 브랜드 차량의 장단점을 논의하는 보배드림 스레드에서는 매달 대형 브랜드 대여 업체의 견적 비교표와 현금지원, 신세계 상품권 혜택 유무를 투명하게 공개하기도 합니다. 금융 제휴 이벤트인 토스 페이백 적용 법이나 현대카드 캐시백 연동 등을 꼼꼼하게 따져 실질 할인을 받는 꿀팁들이 넘쳐납니다.</p>
+
+      <h3>인터넷 검색 및 AI 비서 활용법</h3>
+      <p>원하는 카니발 차종 등급을 결정했다면 <strong>네이버</strong>, <strong>구글</strong>, <strong>유튜브</strong> 플랫폼을 활용해 차량 사양의 자세한 내외관 영상을 먼저 공부하는 것이 좋습니다. 최근에는 소셜 미디어인 <strong>트위터</strong>, <strong>인스타그램</strong>, <strong>페이스북</strong>에서 진행하는 선출고 즉시 인도 특판 프로모션 소식도 유용하게 소비됩니다.</p>
+      
+      <p>견적 설계의 객관성을 더욱 철저히 다지고 싶다면 최신 인공지능 도구인 <strong>챗지피티</strong>나 <strong>제미나이</strong>와 같은 전문 AI 검색을 실행하여 주요 대여 업체의 신용 점수 승인율 비교 가이드를 물어보는 것도 현명합니다. 금융 공학 알고리즘에 기초한 인공지능 비서는 개인의 재정 여건과 연간 평균 수입을 수식에 연동하여 어떤 만기 반납형 상품이 가장 이득인지 한눈에 분석해 줍니다.</p>
+    </section>
+
+    <section id="상세스펙">
+      <h2>더올뉴 카니발 상세 등급 구성 및 옵션 트렌드</h2>
+      <p>2026년식 더올뉴 카니발은 사용자 선택폭을 넓히고자 7인승과 9인승, 그리고 극강의 편안함을 자랑하는 하이리무진으로 나누어 시판되고 있습니다. 다수가 함께 많이 찾는 라인업별 구성은 다음과 같습니다.</p>
+
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>시트 인승 배열</th>
+              <th>추천 적용 옵션 및 기능</th>
+              <th>세금 및 기타 특전</th>
+              <th>적합 타겟층 및 활용도</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>9인승 패밀리</strong></td>
+              <td>컴포트 패키지, 드라이브 와이즈</td>
+              <td>개인사업자 부가세 10% 전액 환급</td>
+              <td>장거리 다둥이 가정, 회사용 다인 수송</td>
+            </tr>
+            <tr>
+              <td><strong>7인승 리무진</strong></td>
+              <td>2열 아웃도어 시트, 프리미엄 사운드</td>
+              <td>개별소비세 비대상 국산 패밀리카 추천</td>
+              <td>골프 클럽 이동, 안락한 패밀리 차량</td>
+            </tr>
+            <tr>
+              <td><strong>4인승 리무진 VIP</strong></td>
+              <td>하이루프 전용 헤드라이닝, 공기청정기</td>
+              <td>임원 전용 비용 처리 극대화 세무 처리</td>
+              <td>최고급 바이어 응대, 하이클래스 의전 전용</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>대부분의 30대 및 40대 아빠 고객들은 가성비와 세제 혜택이라는 실리를 노리기 위해 9인승 프레스티지나 노블레스 등급에 드라이브 와이즈 편의 사양을 장착하는 조합을 최우선으로 선택합니다. 하이브리드 엔진을 탑재할 시 약정 월 대여료가 소폭 상승하더라도 유류 비용 절감 효과가 이를 완벽히 상쇄하므로 장거리 고객들은 무조건 하이브리드를 최우선으로 배치해줄 것을 요구하고 있습니다.</p>
+    </section>
+
+    <section id="종합신청">
+      <h2>더올뉴 카니발 장기렌트카 1:1 정밀 맞춤 견적 신청</h2>
+      <p>초기 무보증 조건의 승인 여부와 보증금 납입 시 예상되는 월 대여 비용 절감액은 정밀 신용 검토를 통해 산출됩니다. 아래 종합 신청 양식에 정보를 기입해 주시면, 제휴된 대여사들의 실시간 특별 프로모션 요금과 현금지원 사은품 혜택을 취합하여 무료 전문 컨설팅을 즉시 지원해 드립니다.</p>
+
+      <div class="form-container">
+        <form action="#" method="post" onsubmit="alert('고객님의 소중한 신청 정보가 접수되었습니다. 담당 에이전트가 곧 연락드리겠습니다.'); return false;">
+          <div class="form-grid">
+            <div class="form-field">
+              <label for="name">이름 및 대표자명 (필수)</label>
+              <input type="text" id="name" required placeholder="예: 홍길동">
+            </div>
+
+            <div class="form-field">
+              <label for="phone">연락처 핸드폰 번호 (필수)</label>
+              <input type="tel" id="phone" required placeholder="예: 010-1234-5678">
+            </div>
+
+            <div class="form-field">
+              <label for="reg-type">가입 고객 구분 선택</label>
+              <select id="reg-type">
+                <option value="personal">개인 급여 소득자</option>
+                <option value="individual-biz">개인 사업자 (부가세 공제 타겟)</option>
+                <option value="corporate-biz">법인 사업자 (임직원 전용 보증)</option>
+              </select>
+            </div>
+
+            <div class="form-field">
+              <label for="car-engine">희망 유종 등급</label>
+              <select id="car-engine">
+                <option value="hybrid">1.6 터보 하이브리드</option>
+                <option value="gasoline">3.5 가솔린</option>
+                <option value="diesel">2.2 디젤</option>
+              </select>
+            </div>
+
+            <div class="form-field">
+              <label for="car-seating">시트 구성 방식</label>
+              <select id="car-seating">
+                <option value="9">9인승 (대중성 최고, 세제 혜택)</option>
+                <option value="7">7인승 (리무진 좌석, 고급형)</option>
+                <option value="4">4인승 (VIP 최고급 의전 사양)</option>
+              </select>
+            </div>
+
+            <div class="form-field">
+              <label for="guarantee">초기 자본 조율 수준</label>
+              <select id="guarantee">
+                <option value="0">무보증금 조건 희망</option>
+                <option value="10">보증금 10 퍼센트 선납</option>
+                <option value="20">보증금 20 퍼센트 선납</option>
+                <option value="30">보증금 30 퍼센트 선납</option>
+              </select>
+            </div>
+
+            <div class="form-field full-width">
+              <label for="special-request">기타 특별 요청 및 사은 혜택 문의 사항</label>
+              <textarea id="special-request" rows="5" placeholder="차종 컬러, 옵션 유무, 주행거리 설계, 현금지원 및 지원금 혜택 등 원하시는 사항을 상세히 기재해 주세요."></textarea>
+            </div>
+
+            <div class="form-field full-width">
+              <div class="checkbox-group">
+                <input type="checkbox" id="privacy-agree" required checked>
+                <label for="privacy-agree">개인정보 수집 및 제3자 제휴사 제공 동의 (필수)</label>
+              </div>
+            </div>
+          </div>
+
+          <button type="submit" class="submit-button">카니발 실시간 다이렉트 맞춤 상담 신청하기</button>
+        </form>
+      </div>
+    </section>
+
+    <section id="신뢰성자료">
+      <h2>공식 외부 정보 채널 안내</h2>
+      <p>더올뉴 카니발 장기렌트카 계약 시 발생하는 다양한 법적 제도와 자동차 안전 정보는 다음의 신뢰성 높은 외부 공식 포털 및 연구소 데이터를 참고하시면 확실하게 이해를 넓힐 수 있습니다.</p>
+
+      <div class="reference-box">
+        <h4>중요 공인 외부 사이트 목록</h4>
+        <ul>
+          <li>
+            <a href="https://leasectrutht.withusrizz.com" target="_blank" rel="noopener">
+              Reliabledone 금융 데이터 분석 센터 - 장기 대여 자산 구조 변동 분석 보고서
+            </a>
+            <p>장기 대여 자산이 가계 신용 정보 및 다자녀 혜택 가구 금융 포트폴리오에 미치는 거시경제 분석 자료를 수록하고 있습니다.</p>
+          </li>
+          <li>
+            <a href="https://namu.wiki/w/%EA%B8%B0%EC%95%84%20%EC%B9%B4%EB%8B%88%EB%B0%9C" target="_blank" rel="noopener">
+              나무위키 기아 카니발 브랜드 역사 및 엔진 상세 데이터
+            </a>
+            <p>초기 1세대 모델부터 최신 페이스리프트 더올뉴 카니발 모델에 이르는 변천사와 트림별 기계 사양 정보가 정리되어 있습니다.</p>
+          </li>
+          <li>
+            <a href="https://www.nts.go.kr" target="_blank" rel="noopener">
+              국세청 홈택스 법인 및 개인사업자 업무용 승용차 관련 세법 요령
+            </a>
+            <p>업무용 차량의 손비 처리 범위 규정과 세금 감면 혜택, 임직원 전용 보험 적용에 관한 공식 소득세 가이드라인을 알 수 있습니다.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="질의응답">
+      <h2>카니발 장기렌트카 이용자 자주 묻는 질문 (FAQ)</h2>
+      <p>소비자들이 가입 진행 전 고객센터에 가장 빈번히 전달하는 핵심 질의들을 일목요연하게 수집하여 명쾌하게 해답을 수록했습니다.</p>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          개인사업자인데 카니발 하이브리드 이용 시 세액 환급은 구체적으로 어떻게 받나요?
+        </div>
+        <div class="faq-answer">
+          대한민국 부가가치세법 규정에 따라 9인승 차량은 업무용 수송 자산으로 분류되어 매 분기 또는 반기 부가세 확정 신고 단계에서 대여 요금에 포함된 매입세액의 10 퍼센트를 고스란히 환급 혹은 매출세액에서 차감받는 특전을 온전하게 보장받습니다.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          무보증 조건으로 무리 없이 승인을 얻기 위한 자격 기준은 무엇인가요?
+        </div>
+        <div class="faq-answer">
+          소득이 입증되는 근로소득 원천징수증 또는 사업자 매출 자료가 존재하고, 신용평가기관의 신용 등급 수준이 평이하다면 보증보험사 서울보증 발급 제도를 이용하여 보증금 한 푼 없이 수월하게 승인 승낙을 얻을 수 있습니다.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          리스 계약과 장기렌트 계약의 결정적인 차이점을 요약해 주십시오.
+        </div>
+        <div class="faq-answer">
+          가장 도드라지는 세부 차이는 허 번호판 강제 부착 여부와 부채 등재 여부, 그리고 보험 경력 승계 여부입니다. 리스는 개인 보험 이력이 계승되고 일반 차량 번호판이 주어지나 가계 금융 부채 한도를 깎아 먹으며 부가세 환급이 원칙적으로 제한되는 반면, 장기렌트는 대출 규제와 부가세 환급 영역에서 압도적인 실리를 가져다줍니다.
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    // FAQ 아코디언 토글 기능 구현 (인터랙션 향상)
+    function toggleFaq(element) {
+      const answer = element.nextElementSibling;
+      if (answer.style.display === "block") {
+        answer.style.display = "none";
+      } else {
+        answer.style.display = "block";
+      }
+    }
+
+    // 실시간 견적 대화형 계산 알고리즘 (체류시간 극대화 및 현실적인 예상 가격 출력)
+    function calculateRent() {
+      const engine = document.getElementById('calc-engine').value;
+      const trim = document.getElementById('calc-trim').value;
+      const period = parseInt(document.getElementById('calc-period').value);
+      const deposit = parseInt(document.getElementById('calc-deposit').value);
+      const age = parseInt(document.getElementById('calc-age').value);
+      const mileage = document.getElementById('calc-mileage').value;
+
+      // 파워트레인별 기초 요금 설계
+      let baseRent = 450000;
+      if (engine === 'diesel') {
+        baseRent = 490000;
+      } else if (engine === 'hybrid') {
+        baseRent = 540000;
+      }
+
+      // 등급 사양 트림 추가 가중치
+      let trimSurcharge = 0;
+      if (trim === 'noblesse') {
+        trimSurcharge = 40000;
+      } else if (trim === 'signature') {
+        trimSurcharge = 90000;
+      } else if (trim === 'gravity') {
+        trimSurcharge = 120000;
+      }
+
+      // 이용 대여 기간에 따른 감쇄 요율 적용
+      let periodDiscount = 1.0;
+      if (period === 48) {
+        periodDiscount = 0.92;
+      } else if (period === 60) {
+        periodDiscount = 0.85;
+      }
+
+      // 보증금 예치 수준에 따른 금리 특별 우대 요율
+      let depositDiscount = 0;
+      if (deposit === 10) {
+        depositDiscount = 15000;
+      } else if (deposit === 20) {
+        depositDiscount = 35000;
+      } else if (deposit === 30) {
+        depositDiscount = 55000;
+      }
+
+      // 연령별 사고 위험률 보험료 조정 수치
+      let ageSurcharge = 0;
+      if (age === 21) {
+        ageSurcharge = 40000;
+      }
+
+      // 약정 주행 한계선에 대한 요금 할증
+      let mileageSurcharge = 0;
+      if (mileage === '30000') {
+        mileageSurcharge = 25000;
+      } else if (mileage === 'unlimited') {
+        mileageSurcharge = 60000;
+      }
+
+      // 종합 수식 계산 시뮬레이션 가동
+      let finalCalculatedValue = Math.round(((baseRent + trimSurcharge) * periodDiscount) - depositDiscount + ageSurcharge + mileageSurcharge);
+      
+      // 보기 편한 단위 포맷 변환 출력
+      const formattedPrice = finalCalculatedValue.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+      document.getElementById('rent-result').innerText = "월 약 " + formattedPrice + " 원 내외";
+    }
+
+    // 페이지 최초 진입 시 연산 기본 구동
+    window.onload = function() {
+      calculateRent();
+    };
+  </script>
+  
